@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+:root {
+	--font-default: 'Roboto', sans-serif;
+	--font-heading: 'Manrope', sans-serif;
+	--fontawesome: "Font Awesome 5 Pro";
+	--black: #000000;
+	--dark: #040836;
+	--dark-secondary: #202942;
+	--white: #ffffff;
+	--color-primary: #5138ee;
+	--color-secondary: #02ebad;
+	--color-heading: #202942;
+	--color-paragraph: #666666;
+	--box-shadow-primary: 1px 4px 20px -2px rgba(0, 0, 0, 0.1);
+	--box-shadow-secondary: 0 20px 50px rgba(0, 0, 0, 0.1);
+	--box-shadow-regular: 0px 2px 12px 0px #e7e7e7;
+	--box-shadow-extra: 0 5px 50px 0 rgba(0, 0, 0, 0.15);
+	--bg-gray: #edf5ff;
+	--bg-gradient: linear-gradient(45deg, #02ebad 0%, #5a57fb 50%);
+	--custom-blue:#1e417c;
+}
+.custom_blue{
+	color: var(--custom-blue) !important;
+}
+.it-banner h2 strong {
+    display: block;
+    text-transform: uppercase;
+    font-size: 85px;
+}
+.hero_bg_h{
+	height: 90vh;
+}
+.separate_bg{
+	background: linear-gradient(45deg, #dfffe4, transparent);
+}
+.blog_paragraph{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.recent-post{
+	max-height: 440px;
+    overflow: scroll;
+	overflow-x:hidden;
+}
+@media only screen and (min-width: 1024px) and (max-width: 1199px){
+	.navbar.validnavs.navbar-default .navbar-nav li a {
+		padding: 30px 8px !important;
+		font-size: 12px;
+	}
+	.navbar .attr-right .attr-nav li .call p {
+		margin-bottom: 5px;
+		line-height: 1;
+		font-size: 13px;
+	}
+	.navbar .attr-right .attr-nav li .call h5 a {
+		font-size: 13px !important;
+	}
+
+}
+@media (min-width:992px){
+	.hero_section .hero_bg_h{
+		padding-top:200px !important;
+	}
+}
+@media (max-width:992px){
+	.hero_bg_h{
+		height: 300px;
+	}
+}
+@media (min-width:600px){
+	.mx-md-50{
+		margin-left:50px !important;
+		margin-right:50px !important;
+	}
+}
+@media (max-width:600px) {
+	.logo_menu_Div{
+		flex-direction: row-reverse;
+	}
+	a.navbar-brand {
+		left: 30% !important;
+	}
+	ul.about-list {
+		grid-template-columns: auto !important;
+		position: relative !important;
+		left: auto !important;
+		top: 0 !important;
+	}
+	.hero_section .owl-stage {
+		display: block !important;
+		padding-top: 100px;
+	}
+	
+	.column_reverse_md{
+		flex-direction: column-reverse;
+	}
+	.services-more .item {
+		padding: 0 30px;
+		margin-top: 0;
+	}
+	.services-more .item {
+		padding: 0px !important; 
+	}
+	.services-more .item .flip-card {
+		width: auto !important;
+	}
+	.contact-form-box p {
+		margin-right: 0px !important;
+	}
+	h2{
+		text-align: center;
+	}
+	.about-style-four .nav-tabs button {
+		margin: 0px !important;
+	}
+}
