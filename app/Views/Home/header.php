@@ -43,7 +43,7 @@ ul.nav>li>a, nav.navbar.validnavs.no-background.white ul.nav>li>a {
                             <li class="dropdown">
                                 <a href="/">Home</a>
                             </li>
-                            <li><a href="about">About Us</a></li>
+                            <!-- <li><a href="about">About Us</a></li> -->
                             <!-- <li class="dropdown">
                                 <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Services</a>
                                 <ul class="dropdown-menu">
@@ -60,12 +60,12 @@ ul.nav>li>a, nav.navbar.validnavs.no-background.white ul.nav>li>a {
                                     <li><a href="trainingservice">Training as a Service</a></li>
                                 </ul>
                             </li> -->
-                            <li>
+                            <!-- <li>
                                 <a href="blog" >Blogs</a>
                             </li>
                             <li>
                                 <a href="career" >Enquiry</a>
-                            </li>
+                            </li> -->
                             <li><a href="contact">Contact Us</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
