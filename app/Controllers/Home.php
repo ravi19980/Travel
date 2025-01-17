@@ -3,10 +3,12 @@
 namespace App\Controllers;
 
 use App\Models\CareerModel;
+use App\Models\CityModel;
 use App\Models\enquiryModel;
 use App\Models\SubscribeModel;
 use App\Models\VisitorModel;
 use App\Models\ContactModel;
+use App\Models\StateModel;
 // use App\Helpers\PdfHelper;
 use Mpdf\Mpdf;
 
@@ -22,16 +24,26 @@ class Home extends BaseController
         $this->session->start();
     }
 
-   
     public function index(): string
     {
         $theme_data = $this->getThemeData();
-        $theme_data['head']['title'] = "Travelling Services";
-        $theme_data['head']['meta_keyword'] = "Travelling Services";
-        $theme_data['head']['meta_description'] = "Travelling Services";
+
+        // Fetch all state data using StateModel
+        $stateModel = new StateModel();
+        $stateData = $stateModel->findAll();
+
+        // Add meta and view information to theme data
+        $theme_data['head'] = [
+            'title' => "Travelling Services",
+            'meta_keyword' => "Travelling Services",
+            'meta_description' => "Travelling Services",
+        ];
+        
+        $theme_data['state_data'] = $stateData; // Pass state data to the view
         $theme_data['view_file'] = 'Home/index';
 
-        return view('Home//main', $theme_data);
+        // Return the main view with theme data
+        return view('Home/main', $theme_data);
     }
     public function about(): string
     {
@@ -612,18 +624,18 @@ class Home extends BaseController
         $subjects =  $Adminsubject;
         $message = $adminmessage;
 
-        //    print_r( $infoEmailAddress);die;
-        if ($this->sendsubscribeEmail($senderEmail, $recipient1, $subject1, $messageRecipient1) && $this->sendsubscribeAdmin($Admin, $subjects, $message)) {
+        // //    print_r( $infoEmailAddress);die;
+        // if ($this->sendsubscribeEmail($senderEmail, $recipient1, $subject1, $messageRecipient1) && $this->sendsubscribeAdmin($Admin, $subjects, $message)) {
 
 
-            $response['status'] = 'success';
-            $response['message'] = 'Thank you for subscribing to our newsletter! You are now connected to the latest updates, news, and offers from Arcturus Consulting Services Inc. Expect exciting content delivered straight to your inbox. Stay tuned for exclusive promotions and valuable insights. Welcome aboard!';
-        } else {
-            $response['status'] = 'error';
-            $response['message'] = 'Failed. There was an error sending the email.';
-        }
+        //     $response['status'] = 'success';
+        //     $response['message'] = 'Thank you for subscribing to our newsletter! You are now connected to the latest updates, news, and offers from Arcturus Consulting Services Inc. Expect exciting content delivered straight to your inbox. Stay tuned for exclusive promotions and valuable insights. Welcome aboard!';
+        // } else {
+        //     $response['status'] = 'error';
+        //     $response['message'] = 'Failed. There was an error sending the email.';
+        // }
 
-        return $this->response->setJSON($response);
+        // return $this->response->setJSON($response);
     }
 
     public function sendEmail($senderEmail, $recipient1, $subject1, $messageRecipient1)
@@ -693,8 +705,26 @@ class Home extends BaseController
         return view('Home//main', $theme_data);
     }
 
-
-
+    public function getcitylist()
+    {
+        $stateid = $this->request->getPost('state_id');
+        $citymodel = new CityModel();
+        
+        // Fetch the list of cities related to the state
+        $citylist = $citymodel->where('state_id', $stateid)->findAll();
+    
+        // Initialize the options string
+        $opt = '<option value="">Select City</option>';
+    
+        // Loop through citylist and append each city as an option
+        foreach ($citylist as $citydata) {
+            $opt .= "<option value='" . $citydata['city_id'] . "'>" . $citydata['city_name'] . "</option>";
+        }
+    
+        // Return the options string as a JSON response
+        return $this->response->setJSON($opt);
+    }
+    
 
     protected function getThemeData(): array
     {
