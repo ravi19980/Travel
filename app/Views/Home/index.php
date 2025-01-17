@@ -1,4 +1,45 @@
 <style>
+    h1 {
+        font-size: 40px;
+        color: #418181;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .car-option {
+        display: inline-block;
+        margin: 20px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .car-option img {
+        width: 200px;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .car-option:hover {
+        background-color: #f0f0f0;
+    }
+
+    #car-details {
+        margin-top: 30px;
+        display: none;
+    }
+
+    #car-details img {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+    }
+
     .about-six-thumb img:nth-child(2) {
         position: absolute;
         right: 0;
@@ -172,13 +213,32 @@
             <div class="col-xl-5 mt-30">
                 <div class="site-heading">
                     <h4 class="title-sub wow fadeInUp" data-wow-delay="500ms">Experience</h4>
-                    <h2 class="title-regular">"Discover the World Through Our Travel Experiences"</h2>
+                    <h2 class="title-regular">"Choose Destination"</h2>
                 </div>
-                <p>
-                    Embarking on a journey is more than just reaching a destination—it's about embracing the adventure, uncovering hidden gems, and creating memories that last a lifetime. Whether it's the serenity of untouched landscapes, the vibrant pulse of bustling cities, or the rich tapestry of diverse cultures, every travel experience tells a unique story. At [Your Website Name], we curate experiences that go beyond the ordinary, immersing you in the heart of every place you visit. Let us inspire your wanderlust and turn your travel dreams into unforgettable realities. Your next great adventure awaits!
-                </p>
-                <!-- <a class="btn mt-10 circle btn-theme-effect btn-sm" href="about">Company Story</a> -->
+                <div class="row">
+                    <div class="destination-dropdown mt-3">
+                        <label for="destination_state" class="form-label">Select State:</label>
+                        <select id="destination_state" name="destination_state" class="form-select" onchange="Showcitydata()">
+                            <option value="" selected disabled>Choose Destination</option>
+                            <!-- Loop through the state data to generate options dynamically -->
+                            <?php foreach ($state_data as $state): ?>
+                                <option value="<?= htmlspecialchars($state['state_id']); ?>"><?= htmlspecialchars($state['state_name']); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <!-- Dropdown to Choose City -->
+                    <div class="destination-dropdown mt-3">
+                        <label for="destination_district" class="form-label">Select City:</label>
+                        <select id="destination_district" name="destination_district" class="form-select">
+                            <option value="" selected disabled>Choose Destination</option>
+                            <!-- Cities will be populated here dynamically -->
+                        </select>
+                    </div>
+                </div>
+
             </div>
+
         </div>
     </div>
 </div>
@@ -204,108 +264,107 @@
                 <div class="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="services-style-six">
                         <div class="info">
-                            <div class="services-style-six-height">
-                            <h4>
-                                <!-- <img src="assets/img/acs/saas_4784532.png" alt="Image Not Found" class="mb-0"> -->
-                                <a href="#">Customized Tour Packages</a></h4>
-                                    
+                            <div class="services-style-seven-height">
+                                <h4><a href="#">Ghrishneshwar Temple</a></h4>
+                                <img src="assets/img/Temple/ghrishneshwar.jpg" alt="Ghrishneshwar Temple" class="mb-0">
                                 <p class="text-light">
-                                    Discover tailor-made tour packages for destinations around the world. Experience unforgettable adventures designed just for you.
+                                    Ghrishneshwar is a sacred pilgrimage site located near Ellora caves. It is one of the 12 Jyotirlinga shrines dedicated to Lord Shiva, offering a serene and spiritual experience amidst natural beauty.
                                 </p>
                             </div>
-                            <a href="tour-packages">Read More <i class="fas fa-arrow-right"></i></a>
+                            <a href="ghrishneshwar">Read More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="services-style-six">
-                        <div class="info">
-                            <div class="services-style-six-height">
-                            <h4> <img src="assets/img/acs/applicationicon.png" alt="Image Not Found" class="mb-0" > <a href="#">Hotel Booking</a></h4>
-                             
-                                <p class="text-light">
-                                    Book the best hotels at unbeatable prices. We ensure comfort, luxury, and convenience wherever you go.
-                                </p>
-                            </div>
-                            <a href="hotel-booking">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="services-style-six">
-                        <div class="info">
-                            <div class="services-style-six-height">
-                                <h4>
-                                    <!-- <img src="assets/img/travel/flight_booking.png" alt="Image Not Found" class="mb-0"> -->
-                                    <a href="#">Flight Booking</a>
-                                </h4>
-                                <p class="text-light">
-                                    Get access to the best flight deals and seamless booking services for domestic and international travel.
-                                </p>
-                            </div>
-                            <a href="flight-booking">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="services-style-six">
-                        <div class="info">
-                            <div class="services-style-six-height">
-                               
 
-                                <h4><img src="assets/img/acs/demo.png" alt="Image Not Found" class="mb-0"><a href="#">Travel Insurance</a></h4>
-                                  
-                                </h4>
-                                <p class="text-light">
-                                    Travel worry-free with our comprehensive travel insurance plans that cover emergencies, cancellations, and more.
-                                </p>
-                            </div>
-                            <a href="travel-insurance">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
                 <div class="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="services-style-six">
                         <div class="info">
-                            <div class="services-style-six-height">
-                                <h4>
-                                    <!-- <img src="assets/img/travel/guided_tours.png" alt="Image Not Found" class="mb-0"> -->
-                                    <a href="#">Guided Tours</a>
-                                </h4>
+                            <div class="services-style-seven-height">
+                                <h4><a href="#">Bhimashankar Temple</a></h4>
+                                <img src="assets/img/Temple/bhimashankar.jpg" alt="Bhimashankar Temple" class="mb-0">
                                 <p class="text-light">
-                                    Explore new destinations with expert guides who bring local culture, history, and stories to life.
+                                    Bhimashankar is a revered Jyotirlinga shrine located in the Sahyadri mountains. It is not only a spiritual center but also a popular destination for trekking and nature lovers.
                                 </p>
                             </div>
-                            <a href="guided-tours">Read More <i class="fas fa-arrow-right"></i></a>
+                            <a href="bhimashankar">Read More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
+
                 <div class="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="services-style-six">
                         <div class="info">
-                            <div class="services-style-six-height">
-                                <h4>
-                                    <!-- <img src="assets/img/travel/car_rental.png" alt="Image Not Found" class="mb-0"> -->
-                                    <a href="#">Car Rentals</a>
-                                </h4>
+                            <div class="services-style-seven-height">
+                                <h4><a href="#">Trayambkeshwar Temple</a></h4>
+                                <img src="assets/img/Temple/trayambkeshwar.jpg" alt="Trayambkeshwar Temple" class="mb-0">
                                 <p class="text-light">
-                                    Enjoy the freedom of traveling at your own pace with our reliable car rental services in major cities worldwide.
+                                    Trayambkeshwar is an ancient temple located in the Nashik district of Maharashtra. It is dedicated to Lord Shiva and is known for its unique trident-shaped temple structure.
                                 </p>
                             </div>
-                            <a href="car-rentals">Read More <i class="fas fa-arrow-right"></i></a>
+                            <a href="trayambkeshwar">Read More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="services-style-six">
+                        <div class="info">
+                            <div class="services-style-seven-height">
+                                <h4><a href="#">Shani Singnapur</a></h4>
+
+                                <img src="assets/img/Temple/shani_shignapur.jpg" alt="Shani Singnapur" class="mb-0">
+                                <p class="text-light">
+                                    Shani Singnapur is a village in Maharashtra famous for the Shani temple, where Lord Shani is worshipped. The unique aspect of this temple is that it has no roof, symbolizing the belief that Lord Shani resides in open space.
+                                </p>
+                            </div>
+                            <a href="shani-singnapur">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <!-- Mahakaleshwar -->
+                <div class="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="services-style-six">
+                        <div class="info">
+                            <div class="services-style-seven-height">
+                                <!-- Heading First -->
+                                <h4><a href="#">Mahakaleshwar Temple</a></h4>
+
+                                <!-- Image Next -->
+                                <img src="assets/img/Temple/mahakaleswar.jpg" alt="Mahakaleshwar Temple" class="mb-0">
+
+                                <!-- Paragraph Next -->
+                                <p class="text-light">
+                                    Mahakaleshwar is one of the twelve Jyotirlinga shrines dedicated to Lord Shiva. It is located in Ujjain, MP, and is considered one of the most revered pilgrimage sites in India.
+                                </p>
+                            </div>
+                            <a href="mahakaleshwar">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End Mahakaleshwar Item -->
+
+                <!-- Omkareshwar -->
+                <div class="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="services-style-six">
+                        <div class="info">
+                            <div class="services-style-seven-height">
+                                <h4><a href="#">Omkareshwar Temple</a></h4>
+                            
+                                <img src="assets/img/Temple/omkareshwar.jpg" alt="Trayambkeshwar Temple" class="mb-0">
+                                <p class="text-light">
+                                    Omkareshwar is another prominent Jyotirlinga temple dedicated to Lord Shiva. Located on an island in the Narmada River, it is a place of spiritual significance and scenic beauty.
+                                </p>
+                            </div>
+                            <a href="omkareshwar">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Omkareshwar Item -->
+
                 <!-- End Single Item -->
             </div>
         </div>
@@ -356,7 +415,7 @@
                                 <input type="text" name="firm_pincode" placeholder="Enter Pincode" class="form-control">
                             </div>
                             <div class="mb-4 col-md-12">
-                                <label for="name" class="form-label">Enter Area</label>
+                                <label for="name" class="form-label">Enter City</label>
                                 <input type="text" name="firm_address" placeholder="Enter Full Name" class="form-control">
                             </div>
                             <div class="mb-4 col-12">
@@ -443,45 +502,31 @@
 <!-- our expertise end -->
 
 <!-- Our clients section start -->
-<div class="testimonial-style-two-area bg-gradient text-light default-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="site-heading text-center">
-                    <h4 class="title-sub">Travelers' Stories</h4>
-                    <h2 class="title-regular">Creating Memories <br> Unforgettable Journeys Around the World.</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-                <div class="testimonial-carousel owl-carousel">
-                    <div class="testimonial-item">
-                        <p>
-                            "Our trip to Bali was simply magical. Every detail was taken care of, and the experiences were beyond our expectations!"
-                        </p>
-                        <h5>- Sarah M., USA</h5>
-                    </div>
-                    <div class="testimonial-item">
-                        <p>
-                            "Exploring the Swiss Alps was a dream come true. Thanks to your amazing planning, it was seamless and unforgettable."
-                        </p>
-                        <h5>- David R., UK</h5>
-                    </div>
-                    <div class="testimonial-item">
-                        <p>
-                            "From the vibrant streets of Tokyo to the serene beaches of Okinawa, this was a journey to remember forever."
-                        </p>
-                        <h5>- Emily T., Australia</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+<h1>Select a Car</h1>
+
+<div>
+    <div class="car-option" onclick="showCarDetails('wagonr')">
+        <h4>WagonR</h4>
+        <img src="assets/img/wagoner.jpg" alt="WagonR Image">
+    </div>
+    <div class="car-option" onclick="showCarDetails('dezire')">
+        <h4>Dzire</h4>
+        <img src="assets/img/dezire.jpg" alt="Dzire Image">
+    </div>
+    <div class="car-option" onclick="showCarDetails('ertiga')">
+        <h4>Ertiga</h4>
+        <img src="assets/img/ertiga.jpg" alt="Ertiga Image">
     </div>
 </div>
 
+<div id="car-details">
+    <h2 id="car-name"></h2>
+    <p id="car-description"></p>
+    <img id="car-image" src="" alt="Car Image">
+</div>
 
-    <!-- <div class="container Client_logo">
+
+<!-- <div class="container Client_logo">
         <div class="row" style="background: aliceblue; border-radius: 70px; box-shadow: inset 3px 3px 44px -24px rgba(0,0,0,0.75);">
             <div class="col-lg-10 offset-lg-1  wow fadeInUp" data-wow-delay="500ms">
                 <div class="tesimonial-style-two-carousel owl-carousel owl-theme">
@@ -521,116 +566,6 @@
         </div>
     </div> -->
 </div>
-<!-- Our clients section end -->
-
-<!-- Case Studies  section start -->
-<!-- <div class="gallery-area default-padding ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="site-heading text-center">
-                        <h4 class="title-sub">Case Studies</h4>
-                        <h2 class="title-regular"> Latest showcase and <br> solutions to our customers!	</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 gallery-content">
-                    <div class="magnific-mix-gallery masonary">
-                        <div id="portfolio-grid" class="gallery-items colums-3"> -->
-<!-- Single Item -->
-<!-- <div class="pf-item  wow fadeInUp"  data-wow-delay="500ms">
-                                <div class="overlay">
-                                    <img src="assets/img/acs/cloudapplication.avif" alt="thumb">
-                                    <div class="content">
-                                        <div class="title">
-                                            <span>Service</span>
-                                            <h5><a href="#">Cloud Applications</a></h5>
-                                        </div>
-                                        <a href="#"><i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div> -->
-<!-- End Single Item -->
-<!-- Single Item -->
-<!-- <div class="pf-item  wow fadeInUp"  data-wow-delay="500ms">
-                                <div class="overlay">
-                                    <img src="assets/img/acs/managedsupport.avif" alt="thumb">
-                                    <div class="content">
-                                        <div class="title">
-                                            <span>Service</span>
-                                            <h5><a href="#">Managed Support</a></h5>
-                                        </div>
-                                        <a href="#"><i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div> -->
-<!-- End Single Item -->
-<!-- Single Item -->
-<!-- <div class="pf-item  wow fadeInUp"  data-wow-delay="500ms">
-                                <div class="overlay">
-                                    <img src="assets/img/acs/processautomation.avif" alt="thumb">
-                                    <div class="content">
-                                        <div class="title">
-                                            <span>Service</span>
-                                            <h5><a href="#">Process Automation</a></h5>
-                                        </div>
-                                        <a href="#"><i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div> -->
-<!-- End Single Item -->
-<!-- Single Item -->
-<!-- <div class="pf-item  wow fadeInUp"  data-wow-delay="500ms">
-                                <div class="overlay">
-                                    <img src="assets/img/acs/staff augmentation.avif" alt="thumb">
-                                    <div class="content">
-                                        <div class="title">
-                                            <span>Service</span>
-                                            <h5><a href="#">Staff Augmentation</a></h5>
-                                        </div>
-                                        <a href="#"><i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div> -->
-<!-- End Single Item -->
-<!-- Single Item -->
-<!-- <div class="pf-item  wow fadeInUp"  data-wow-delay="500ms">
-                                <div class="overlay">
-                                    <img src="assets/img/acs/testmodus.avif" alt="thumb">
-                                    <div class="content">
-                                        <div class="title">
-                                            <span>Service</span>
-                                            <h5><a href="#">Test Modus</a></h5>
-                                        </div>
-                                        <a href="#"><i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div> -->
-<!-- End Single Item -->
-<!-- Single Item -->
-<!-- <div class="pf-item  wow fadeInUp"  data-wow-delay="500ms">
-                                <div class="overlay">
-                                    <img src="assets/img/acs/oraclecloud.avif" alt="thumb">
-                                    <div class="content">
-                                        <div class="title">
-                                            <span>Service</span>
-                                            <h5><a href="#">Oracle Infrastructure</a></h5>
-                                        </div>
-                                        <a href="#"><i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div> -->
-<!-- Single Item -->
-<!-- </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-<!-- Case Studies  section end -->
 
 
 <!-- Start Blog -->
@@ -647,67 +582,117 @@
     </div>
 
     <div class="container">
-    <div class="row">
+        <div class="row">
 
-        <!-- Single item -->
-        <div class="single-item col-lg-4 col-md-6">
-            <div class="item">
-                <div class="thumb" style="height: 245px;">
-                    <a href="blog_detail"><img src="assets/img/downloadfamilyblog.jpg" alt="Thumb" class="h-100"></a>
-                    <div class="date"><strong>19</strong> <span>March</span></div>
-                </div>
-                <div class="info">
-                    <h4>
-                        <a href="blog_detail">Top 10 Exotic Destinations to Explore in 2024</a>
-                    </h4>
-                    <p class="blog_paragraph">
-                        Embark on a journey to some of the most breathtaking destinations around the globe. From serene beaches to majestic mountains, discover our top picks for your travel bucket list in 2024.
-                    </p>
+            <!-- Single item -->
+            <div class="single-item col-lg-4 col-md-6">
+                <div class="item">
+                    <div class="thumb" style="height: 245px;">
+                        <a href="blog_detail"><img src="assets/img/downloadfamilyblog.jpg" alt="Thumb" class="h-100"></a>
+                        <div class="date"><strong>19</strong> <span>March</span></div>
+                    </div>
+                    <div class="info">
+                        <h4>
+                            <a href="blog_detail">Top 10 Exotic Destinations to Explore in 2024</a>
+                        </h4>
+                        <p class="blog_paragraph">
+                            Embark on a journey to some of the most breathtaking destinations around the globe. From serene beaches to majestic mountains, discover our top picks for your travel bucket list in 2024.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Single item -->
+            <!-- End Single item -->
 
-        <!-- Single item -->
-        <div class="single-item col-lg-4 col-md-6">
-            <div class="item">
-                <div class="thumb" style="height: 245px;">
-                    <a href="blog_detail2"><img src="assets/img/downloadblog1.jpg" alt="Thumb" class="h-100"></a>
-                    <div class="date"><strong>25</strong> <span>March</span></div>
-                </div>
-                <div class="info">
-                    <h4>
-                        <a href="blog_detail2">Travel Hacks: Save Money and Travel Smarter</a>
-                    </h4>
-                    <p class="blog_paragraph">
-                        Discover essential travel hacks to save money, pack efficiently, and make the most out of your trips. Learn how to find hidden travel deals and avoid common travel mistakes.
-                    </p>
+            <!-- Single item -->
+            <div class="single-item col-lg-4 col-md-6">
+                <div class="item">
+                    <div class="thumb" style="height: 245px;">
+                        <a href="blog_detail2"><img src="assets/img/downloadblog1.jpg" alt="Thumb" class="h-100"></a>
+                        <div class="date"><strong>25</strong> <span>March</span></div>
+                    </div>
+                    <div class="info">
+                        <h4>
+                            <a href="blog_detail2">Travel Hacks: Save Money and Travel Smarter</a>
+                        </h4>
+                        <p class="blog_paragraph">
+                            Discover essential travel hacks to save money, pack efficiently, and make the most out of your trips. Learn how to find hidden travel deals and avoid common travel mistakes.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Single item -->
+            <!-- End Single item -->
 
-        <!-- Single item -->
-        <div class="single-item col-lg-4 col-md-6">
-            <div class="item">
-                <div class="thumb" style="height: 245px;">
-                    <a href="blog_detail3"><img src="assets/img/womentravel.jpg" alt="Thumb" class="h-100"></a>
-                    <div class="date"><strong>30</strong> <span>March</span></div>
-                </div>
-                <div class="info">
-                    <h4>
-                        <a href="blog_detail3">Cultural Wonders: Immersive Travel Experiences</a>
-                    </h4>
-                    <p class="blog_paragraph">
-                        Step into the heart of diverse cultures around the world. From local festivals to traditional cuisine, explore immersive travel experiences that leave a lasting impression.
-                    </p>
+            <!-- Single item -->
+            <div class="single-item col-lg-4 col-md-6">
+                <div class="item">
+                    <div class="thumb" style="height: 245px;">
+                        <a href="blog_detail3"><img src="assets/img/womentravel.jpg" alt="Thumb" class="h-100"></a>
+                        <div class="date"><strong>30</strong> <span>March</span></div>
+                    </div>
+                    <div class="info">
+                        <h4>
+                            <a href="blog_detail3">Cultural Wonders: Immersive Travel Experiences</a>
+                        </h4>
+                        <p class="blog_paragraph">
+                            Step into the heart of diverse cultures around the world. From local festivals to traditional cuisine, explore immersive travel experiences that leave a lasting impression.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Single item -->
+            <!-- End Single item -->
 
+        </div>
     </div>
-</div>
 
 </div>
 <!-- End Blog -->
+<script>
+    var base_url = "<?php echo base_url(); ?>";
+
+    function Showcitydata() {
+        var stateid = $('#destination_state').val(); // Get the selected state ID
+
+        // Make AJAX request to fetch the city list based on selected state
+        $.ajax({
+            url: base_url + 'Home/getcitylist',
+            data: {
+                "state_id": stateid
+            }, // Send state_id as data
+            type: 'POST',
+            success: function(data) {
+
+                dataa = JSON.parse(data);
+                console.log(dataa);
+                debugger;
+                // Directly update the city dropdown with the returned HTML options
+                $("#destination_district").html(dataa);
+            }
+        });
+    }
+
+    function showCarDetails(car) {
+        let carName = '';
+        let carDescription = '';
+        let carImage = '';
+
+        if (car === 'wagonr') {
+            carName = 'Suzuki WagonR';
+            carDescription = 'The WagonR is a compact city car offering great fuel efficiency and easy handling.';
+            carImage = 'assets/img/wagoner.jpg'; // Local image for WagonR
+        } else if (car === 'dezire') {
+            carName = 'Suzuki Dzire';
+            carDescription = 'The Dzire is a compact sedan, known for its style and comfort along with impressive fuel economy.';
+            carImage = 'assets/img/dezire.jpg'; // Local image for Dzire
+        } else if (car === 'ertiga') {
+            carName = 'Suzuki Ertiga';
+            carDescription = 'The Ertiga is a spacious and affordable MPV, offering comfort and practicality for families.';
+            carImage = 'assets/img/ertiga.jpg'; // Local image for Ertiga
+        }
+
+        // Display the selected car details
+        document.getElementById('car-name').innerText = carName;
+        document.getElementById('car-description').innerText = carDescription;
+        document.getElementById('car-image').src = carImage;
+        document.getElementById('car-details').style.display = 'block';
+    }
+</script>
