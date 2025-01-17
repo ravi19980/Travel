@@ -30,7 +30,7 @@
                     <li>
                         <a href="index.html"><i class="fas fa-angle-right"></i> Home</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="about.html"><i class="fas fa-angle-right"></i> About Us</a>
                     </li>
                     <li>
@@ -38,7 +38,7 @@
                     </li>
                     <li>
                         <a href="blog.html"><i class="fas fa-angle-right"></i> Travel Blog</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -46,18 +46,18 @@
             <div class="f-item link">
                 <h4 class="widget-title"></h4>
                 <ul>
-                    <li>
+                    <!-- <li>
                         <a href="careers.html"><i class="fas fa-angle-right"></i> Careers</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="contact.html"><i class="fas fa-angle-right"></i> Contact Us</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="faq.html"><i class="fas fa-angle-right"></i> FAQ</a>
                     </li>
                     <li>
                         <a href="terms.html"><i class="fas fa-angle-right"></i> Terms & Conditions</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -89,7 +89,7 @@
                                         </div>
                                         <div class="content">
                                             <strong>Email:</strong>
-                                            <a href="mailto:info@arcturusconsultingservices.com">travailingdestination@services.com</a>
+                                            <a href="">travailingdestination@services.com</a>
                                         </div>
                                     </li>
                                     <li>
@@ -102,9 +102,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="icon">
-                                           <a href="https://www.linkedin.com/"> <i class="fab fa-linkedin-in"></i></a>
-                                        </div>
+                             
                                         <div class="icon">
                                             <a href="https://www.instagram.com/">
                                             <i class="fab fa-instagram"> </i> 
@@ -117,11 +115,7 @@
                                             </a>
                                             
                                         </div>
-                                        <div class="icon">
-                                            <a href="https://twitter.com/">
-                                                 <i class="fab fa-twitter"></i>
-                                            </a>
-                                        </div>
+                                      
                                     </li>
                                 </ul>
                             </div>
