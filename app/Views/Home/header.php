@@ -76,9 +76,9 @@ ul.nav>li>a, nav.navbar.validnavs.no-background.white ul.nav>li>a {
                             <ul>
                                 <li class="contact">
                                     <div class="call">
-                                        <div class="icon">
+<!--                                         <div class="icon">
                                             <i class="custom_blue fas fa-comments-alt-dollar"></i>
-                                        </div>
+                                        </div> -->
                                         <div class="info">
                                             <p class="custom_blue">Have any Questions?</p>
                                             <h5><a href="mailto:Travailingdestination@services.com" class="custom_blue" style="font-size: 15px;">Travailingdestination@services.com</a></h5>
