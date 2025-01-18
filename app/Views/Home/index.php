@@ -1,4 +1,61 @@
 <style>
+    .car-selection-container {
+    background: linear-gradient(45deg, #02EBAC 0%, #5a57fb 50%);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+        .car-option {
+            display: inline-block;
+            width: 28%;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .car-option:hover {
+            transform: scale(1.05);
+            border-color: #fff;
+        }
+
+        .car-option img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .car-option h4 {
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        #car-details {
+            margin-top: 30px;
+            display: none; /* Initially hidden */
+        }
+
+        #car-details h2 {
+            color: #fff;
+        }
+
+        #car-details img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        #car-details p {
+            color: #fff;
+        }
     .services-style-six:hover {
         transform: scale(1.05);
         /* Subtle zoom effect */
@@ -515,28 +572,28 @@
 <!-- our expertise end -->
 
 <!-- Our clients section start -->
-<h1>Select a Car</h1>
+<div class="car-selection-container">
+        <h1>Select a Car</h1>
 
-<div>
-    <div class="car-option" onclick="showCarDetails('wagonr')">
-        <h4>WagonR</h4>
-        <img src="assets/img/wagoner.jpg" alt="WagonR Image">
-    </div>
-    <div class="car-option" onclick="showCarDetails('dezire')">
-        <h4>Dzire</h4>
-        <img src="assets/img/dezire.jpg" alt="Dzire Image">
-    </div>
-    <div class="car-option" onclick="showCarDetails('ertiga')">
-        <h4>Ertiga</h4>
-        <img src="assets/img/ertiga.jpg" alt="Ertiga Image">
-    </div>
-</div>
+        <div class="car-option" onclick="showCarDetails('wagonr')">
+            <h4>WagonR</h4>
+            <img src="assets/img/wagoner.jpg" alt="WagonR Image">
+        </div>
+        <div class="car-option" onclick="showCarDetails('dezire')">
+            <h4>Dzire</h4>
+            <img src="assets/img/dezire.jpg" alt="Dezire Image">
+        </div>
+        <div class="car-option" onclick="showCarDetails('ertiga')">
+            <h4>Ertiga</h4>
+            <img src="assets/img/ertiga.jpg" alt="Ertiga Image">
+        </div>
 
-<div id="car-details">
-    <h2 id="car-name"></h2>
-    <p id="car-description"></p>
-    <img id="car-image" src="" alt="Car Image">
-</div>
+        <div id="car-details">
+            <h2 id="car-name"></h2>
+            <p id="car-description"></p>
+            <img id="car-image" src="" alt="Car Image">
+        </div>
+    </div>
 
 
 <!-- <div class="container Client_logo">
@@ -683,7 +740,7 @@
         });
     }
 
-    function showCarDetails(car) {
+      function showCarDetails(car) {
         let carName = '';
         let carDescription = '';
         let carImage = '';
