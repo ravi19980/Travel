@@ -271,12 +271,13 @@ h1 {
                                 <img class="wow fadeInUp" data-wow-delay="500ms" src="assets/img/gettyimages.jpg" alt="Image Not Found" style="width:125px">
                             </div>
                         </li>
-                        <li>
-                            <h4>Navigating Success with Oracle Precision </h4>
-                            <p>
-                                Your Trusted Partner for E-Business Suite, Oracle ERP Cloud and Supply Chain Solutions.
-                            </p>
-                        </li>
+                       <li>
+           <h4>Explore the World with Ease</h4>
+    <p>
+        Your Trusted Partner for Unforgettable Journeys, Travel Planning, and Adventure Experiences.
+    </p>
+</li>
+
                     </ul>
                 </div>
             </div>
