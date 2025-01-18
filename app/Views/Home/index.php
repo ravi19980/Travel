@@ -69,10 +69,10 @@
         /* Stretch to match parent height */
     }
 
-    h1 {
-        font-size: 40px;
-        color: #418181;
-    }
+h1 {
+    font-size: 40px;
+    color: #fbf4f4;
+}
 
     body {
         font-family: Arial, sans-serif;
