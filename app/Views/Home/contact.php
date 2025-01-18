@@ -5,7 +5,7 @@
 
 <div
     class="breadcrumb-area shadow dark bg-cover text-center text-light"
-    style="background-image: url(assets/img/acs/shivaji_maharaj.jpg); 
+    style="background-image: url(assets/img/shivaji_maharaj.jpg); 
            width: 1300px; 
            height: 550px; 
            background-size: cover; 
