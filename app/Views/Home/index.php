@@ -279,7 +279,7 @@
                         <div class="info">
                             <div class="services-style-seven-height">
                                 <h4><a href="#">Ghrishneshwar Temple</a></h4>
-                                <img src="assets/img/Temple/ghrishneshwar.jpg" alt="Ghrishneshwar Temple" class="mb-0">
+                                <img src="assets/img/ghrishneshwar.jpg" alt="Ghrishneshwar Temple" class="mb-0">
                                 <p class="text-light">
                                     Ghrishneshwar is a sacred pilgrimage site located near Ellora caves. It is one of the 12 Jyotirlinga shrines dedicated to Lord Shiva, offering a serene and spiritual experience amidst natural beauty.
                                 </p>
@@ -294,7 +294,7 @@
                         <div class="info">
                             <div class="services-style-seven-height">
                                 <h4><a href="#">Bhimashankar Temple</a></h4>
-                                <img src="assets/img/Temple/bhimashankar.jpg" alt="Bhimashankar Temple" class="mb-0">
+                                <img src="assets/img/bhimashankar.jpg" alt="Bhimashankar Temple" class="mb-0">
                                 <p class="text-light">
                                     Bhimashankar is a revered Jyotirlinga shrine located in the Sahyadri mountains. It is not only a spiritual center but also a popular destination for trekking and nature lovers.
                                 </p>
@@ -309,7 +309,7 @@
                         <div class="info">
                             <div class="services-style-seven-height">
                                 <h4><a href="#">Trayambkeshwar Temple</a></h4>
-                                <img src="assets/img/Temple/trayambkeshwar.jpg" alt="Trayambkeshwar Temple" class="mb-0">
+                                <img src="assets/img/trayambkeshwar.jpg" alt="Trayambkeshwar Temple" class="mb-0">
                                 <p class="text-light">
                                     Trayambkeshwar is an ancient temple located in the Nashik district of Maharashtra. It is dedicated to Lord Shiva and is known for its unique trident-shaped temple structure.
                                 </p>
@@ -325,7 +325,7 @@
                             <div class="services-style-seven-height">
                                 <h4><a href="#">Shani Singnapur</a></h4>
 
-                                <img src="assets/img/Temple/shani_shignapur.jpg" alt="Shani Singnapur" class="mb-0">
+                                <img src="assets/img/shani_shignapur.jpg" alt="Shani Singnapur" class="mb-0">
                                 <p class="text-light">
                                     Shani Singnapur is a village in Maharashtra famous for the Shani temple, where Lord Shani is worshipped. The unique aspect of this temple is that it has no roof, symbolizing the belief that Lord Shani resides in open space.
                                 </p>
@@ -346,7 +346,7 @@
                                 <h4><a href="#">Mahakaleshwar Temple</a></h4>
 
                                 <!-- Image Next -->
-                                <img src="assets/img/Temple/mahakaleswar.jpg" alt="Mahakaleshwar Temple" class="mb-0">
+                                <img src="assets/img/mahakaleswar.jpg" alt="Mahakaleshwar Temple" class="mb-0">
 
                                 <!-- Paragraph Next -->
                                 <p class="text-light">
@@ -367,7 +367,7 @@
                             <div class="services-style-seven-height">
                                 <h4><a href="#">Omkareshwar Temple</a></h4>
 
-                                <img src="assets/img/Temple/omkareshwar.jpg" alt="Trayambkeshwar Temple" class="mb-0">
+                                <img src="assets/img/omkareshwar.jpg" alt="Trayambkeshwar Temple" class="mb-0">
                                 <p class="text-light">
                                     Omkareshwar is another prominent Jyotirlinga temple dedicated to Lord Shiva. Located on an island in the Narmada River, it is a place of spiritual significance and scenic beauty.
                                 </p>
